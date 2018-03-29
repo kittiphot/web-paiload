@@ -1,27 +1,19 @@
-angular.module('myApp').factory('hotelProfileFactory', ['$http', 'Upload', function ($http, Upload) {
+angular.module('myApp').factory('hotelImageProfileFactory', ['$http', 'Upload', function ($http, Upload) {
   // var api = 'http://103.13.228.76/web/kk_api/public/index.php';
   var api = 'http://localhost:9000';
-  var hotelProfileFactory = {};
+  var hotelImageProfileFactory = {};
 
-  hotelProfileFactory.getHotelProfile = function (id) {
-    return $http.get(api + '/hotels/' + id);
+  hotelImageProfileFactory.getHotelImageProfile = function (id) {
+    return $http.get(api + '/hotelImage/' + id);
   }
 
-  hotelProfileFactory.setHotel = function (params) {
+  hotelImageProfileFactory.setHotelImage = function (params) {
     let status = (params.id == 0 ? 'create' : 'edit');
     return Upload.upload({
-      url: api + '/hotels/' + status,
+      url: api + '/hotelImage/' + status,
       data: params
     });
   }
 
-  // hotelProfileFactory.getHotelAlbums = function (id) {
-  //   return $http.get(api + '/hotel_profile_albums/' + id);
-  // }
-
-  // hotelProfileFactory.getHotelImages = function (id) {
-  //   return $http.get(api + '/hotel_albums/' + id);
-  // }
-
-  return hotelProfileFactory;
+  return hotelImageProfileFactory;
 }]);

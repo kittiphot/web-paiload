@@ -2,7 +2,7 @@ angular.module('myApp').controller('aboutController', ['$scope', 'aboutFactory',
   $scope.abouts = [];
   $scope.albums = [];
   $scope.status = (typeof $routeParams.status != 'undefined' ? $routeParams.status : 0);
-  $scope.path = ($scope.status == 1 ? '' : 'hotelProfile');
+  $scope.profilePath = ($scope.status == 1 ? '' : 'hotelProfile');
   $scope.name = ($scope.status == 1 ? 'restaurant' : 'hotel');
   $scope.id = (typeof $routeParams.id != 'undefined' ? $routeParams.id : 0);
   // restaurantProfile
@@ -20,6 +20,15 @@ angular.module('myApp').controller('aboutController', ['$scope', 'aboutFactory',
     aboutFactory.getHotelAlbums($scope.id).then(function successCallback(res) {
       console.log(res.data)
       $scope.albums = res.data;
+    }, function errorCallback(err) {
+      console.log(err)
+    })
+  }
+
+  $scope.getRestaurantAlbums = function () {
+    aboutFactory.getRestaurantAlbums($scope.id).then(function successCallback(res) {
+      console.log(res.data)
+      $scope.restaurant = res.data;
     }, function errorCallback(err) {
       console.log(err)
     })
