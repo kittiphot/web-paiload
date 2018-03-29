@@ -4,7 +4,7 @@ angular.module('myApp').factory('hotelImageFactory', ['$http', function ($http) 
   var hotelImageFactory = {};
 
   hotelImageFactory.getHotelImages = function (id) {
-    return $http.get(api + '/hotels/' + id);
+    return $http.get(api + '/hotel_albums/' + id);
   }
 
   return hotelImageFactory;
