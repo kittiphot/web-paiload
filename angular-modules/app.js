@@ -22,10 +22,10 @@ angular.module('myApp').config(function ($routeProvider) {
     .when('/restaurantImage/:id/:name', {
       templateUrl: 'modules/restaurantImage/views/restaurantImage.html'
     })
-    .when('/hotelImageProfile', {
+    .when('/hotelImageProfile/:albumId/:albumName', {
       templateUrl: 'modules/hotelImageProfile/views/hotelImageProfile.html'
     })
-    .when('/hotelImageProfile/:id', {
+    .when('/hotelImageProfile/:albumId/:albumName/:imageId', {
       templateUrl: 'modules/hotelImageProfile/views/hotelImageProfile.html'
     })
     .when('/register', {

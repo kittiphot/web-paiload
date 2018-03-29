@@ -12,8 +12,16 @@ angular.module('myApp').controller('hotelImageController', ['$scope', 'hotelImag
     })
   }
 
-  $scope.deleteImage = function (imageId) {
-    console.log(imageId)
+  $scope.setHotelImagesStatus = function (imageId) {
+    let param = {
+      id: imageId
+    }
+    hotelImageFactory.setHotelImagesStatus(param).then(function successCallback(res) {
+      console.log(res.data)
+      $scope.getHotelImages();
+    }, function errorCallback(err) {
+      console.log(err)
+    })
   }
 
 }]);
