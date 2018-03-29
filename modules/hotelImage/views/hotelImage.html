@@ -8,7 +8,7 @@
         <a href="" class="fh5co-menu-btn js-fh5co-menu-btn">Menu
           <i class="icon-menu"></i>
         </a>
-        <a class="navbar-brand" href="">Image</a>
+        <a class="navbar-brand" href=""></a>
       </div>
     </div>
   </div>
@@ -18,6 +18,10 @@
 
 <div id="fh5co-main" ng-controller="hotelImageController">
   <div class="container" ng-init="getHotelImages()">
+
+    <div class="row text-center">
+      {{ name }}
+    </div>
 
     <div class="row text-center">
       <a href="#!/" class="btn btn-primary">
@@ -33,14 +37,14 @@
             <div class="animate-box">
               <div class="row">
                 <div class="col-md-3">
-                  <button class="btn btn-block btn-danger" type="button" style="position: absolute">
-                    X
+                  <button class="btn btn-block btn-danger" type="button" style="position: absolute" ng-click="deleteImage(hotelImage.id)">
+                    <i class="glyphicon glyphicon-remove"></i>
                   </button>
                 </div>
                 <div class="col-md-3">
-                  <button class="btn btn-block btn-warning" type="button" style="position: absolute">
-                    X
-                  </button>
+                  <a href="#!/hotelProfile/{{ status }}/{{ id }}" class="btn btn-warning" style="position: absolute">
+                    <i class="glyphicon glyphicon-edit"></i>
+                  </a>
                 </div>
               </div>
               <a href="#!/about/2/{{ hotelImage.id }}" class="image-popup fh5co-board-img" title="{{ hotelImage.detail }}">

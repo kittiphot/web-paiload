@@ -13,8 +13,11 @@ angular.module('myApp').config(function ($routeProvider) {
     .when('/hotelProfile/:status/:id', {
       templateUrl: 'modules/hotelProfile/views/hotelProfile.html'
     })
-    .when('/hotelImage/:id', {
+    .when('/hotelImage/:id/:name', {
       templateUrl: 'modules/hotelImage/views/hotelImage.html'
+    })
+    .when('/hotelImageProfile/:id', {
+      templateUrl: 'modules/hotelImageProfile/views/hotelImageProfile.html'
     })
     .when('/register', {
       templateUrl: 'modules/register/views/register.html'

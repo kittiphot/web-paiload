@@ -23,11 +23,11 @@
 
     <div class="row" ng-controller="aboutController">
       <div class="col-md-12 text-center">
-        <a href="#!/hotelProfile/{{ status }}/{{ id }}" class="btn btn-warning">
-          Edit&nbsp;Hotel&nbsp;Profile
+        <a href="#!/{{ path }}/{{ status }}/{{ id }}" class="btn btn-warning">
+          Edit&nbsp;{{ name }}&nbsp;Profile
         </a>
         <button class="btn btn-danger">
-          Delete&nbsp;Hotel&nbsp;Profile
+          Delete&nbsp;{{ name }}&nbsp;Profile
         </button>
       </div>
     </div>
@@ -72,7 +72,7 @@
 
         <div ng-init="getHotelAlbums()">
           <div class="col-md-3" ng-repeat="album in albums">
-            <a href="#!/hotelImage/{{ album.id }}" class="btn btn-info">
+            <a href="#!/hotelImage/{{ album.id }}/{{ album.name }}" class="btn btn-info">
               {{ album.name }}
             </a>
           </div>
