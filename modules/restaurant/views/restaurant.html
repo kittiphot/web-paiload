@@ -1,0 +1,60 @@
+<div ng-include="'modules/menu/views/menu.html'"></div>
+
+<header id="fh5co-header" role="banner">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="" class="fh5co-menu-btn js-fh5co-menu-btn">Menu
+          <i class="icon-menu"></i>
+        </a>
+        <a class="navbar-brand" href="">Restaurant</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="padding-left:20%;padding-right:20%;">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="custom-search-input">
+          <div class="input-group col-md-12">
+            <input type="text" class="form-control input-lg" placeholder="Search..." />
+            <span class="input-group-btn">
+              <button class="btn btn-info btn-lg" type="button">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+<!-- END .header -->
+
+<div id="fh5co-main" ng-controller="restaurantController">
+  <div class="container" ng-init="getRestaurants()">
+
+    <div class="row">
+      <div class="col-md-3" ng-repeat="restaurant in restaurants">
+
+        <div id="fh5co-board" data-columns>
+          <div class="item" style="height:300px">
+            <div class="animate-box">
+              <a href="#!/about/1/{{ restaurant.id }}" class="image-popup fh5co-board-img" title="{{restaurant.detail}}">
+                <img style="height:150px" src="{{restaurant.image_url}}" alt="Free HTML5 Bootstrap template" width="100%">
+              </a>
+            </div>
+            <div class="fh5co-desc">{{restaurant.address}}.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Magnific Popup -->
+<script src="../../../js/jquery.magnific-popup.min.js"></script>

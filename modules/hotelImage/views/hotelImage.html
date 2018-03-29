@@ -1,0 +1,174 @@
+<div ng-include="'modules/menu/views/menu.html'"></div>
+
+<header id="fh5co-header" role="banner">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="" class="fh5co-menu-btn js-fh5co-menu-btn">Menu
+          <i class="icon-menu"></i>
+        </a>
+        <a class="navbar-brand" href=""></a>
+      </div>
+    </div>
+  </div>
+
+</header>
+<!-- END .header -->
+
+<div id="fh5co-main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>Hotel</h2>
+        <div class="fh5co-spacer fh5co-spacer-sm"></div>
+        <form ng-submit="submit()" ng-controller="hotelProfileController" ng-init="getHotelProfile()">
+          <div class="row">
+
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Name</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Name" ng-model="hotelProfiles.name" required>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-xs-3 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Image</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="btn btn-info" ngf-select ng-model="hotelProfiles.image" name="image" ngf-pattern="'image/*'" ngf-accept="'image/*'"
+                ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 300, height: 300}">
+                Select
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Tel</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Tel" ng-model="hotelProfiles.tel" required>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Promotion</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Hotel&nbsp;Promotion" ng-model="hotelProfiles.hotel_promotion">
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Zone&nbsp;Id</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Zone&nbsp;Id" ng-model="hotelProfiles.zone_id">
+              </div>
+            </div>
+
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Detail</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <div class="form-group">
+                <textarea name="message" id="message" cols="30" class="form-control" rows="5" placeholder="Detail" ng-model="hotelProfiles.detail" required></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Extension</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <div class="form-group">
+                <textarea name="message" id="message" cols="30" class="form-control" rows="5" placeholder="Extension" ng-model="hotelProfiles.extension"></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Address</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <div class="form-group">
+                <textarea name="message" id="message" cols="30" class="form-control" rows="5" placeholder="Address" ng-model="hotelProfiles.address" required></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Hotel&nbsp;Site</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Hotel&nbsp;Site" ng-model="hotelProfiles.hotel_site">
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Price</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Price" ng-model="hotelProfiles.price">
+              </div>
+            </div>
+
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Visitor</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Visitor" ng-model="hotelProfiles.visitor">
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Price&nbsp;Month</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Price&nbsp;Month" ng-model="hotelProfiles.price_month">
+              </div>
+            </div>
+
+            <div class="col-md-12 text-right">
+              <div class="form-group">
+                <input type="hidden" class="form-control" ng-model="image">
+                <button type="submit" class="btn btn-success">Save</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Magnific Popup -->
+<script src="../../../js/jquery.magnific-popup.min.js"></script>

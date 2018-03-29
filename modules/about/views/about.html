@@ -1,0 +1,74 @@
+<div ng-include="'modules/menu/views/menu.html'"></div>
+
+<header id="fh5co-header" role="banner">
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12">
+        <a href="" class="fh5co-menu-btn js-fh5co-menu-btn">Menu
+          <i class="icon-menu"></i>
+        </a>
+        <a class="navbar-brand" href=""></a>
+      </div>
+
+    </div>
+  </div>
+
+</header>
+<!-- END .header -->
+
+<div id="fh5co-main">
+  <div class="container">
+
+    <div class="row" ng-controller="aboutController">
+      <div class="col-md-12 text-center">
+        <a href="#!/hotelProfile/{{ status }}/{{ id }}" class="btn btn-warning">
+          Edit&nbsp;Hotel&nbsp;Profile
+        </a>
+        <a href="#!/hotelProfile/{{ status }}/{{ id }}" class="btn btn-danger">
+          Delete&nbsp;Hotel&nbsp;Profile
+        </a>
+      </div>
+    </div>
+
+    <div class="row" ng-controller="aboutController" ng-init="getAbout()">
+      <div class="col-md-8 col-md-offset-2">
+
+        <h2 style="text-align: center">{{ abouts.name }}</h2>
+        <p>
+          <img src="{{ abouts.image_url }}" alt="Free HTML5 template by FREEHTML5.co" class="img-rounded img-responsive" width="100%">
+        </p>
+
+        <label class="col-form-label">รายละเอียด</label>
+        <p>
+          {{ abouts.detail }}
+        </p>
+
+        <label class="col-form-label">ที่อยู่</label>
+        <p>
+          {{ abouts.address }}
+        </p>
+
+        <label class="col-form-label">เบอร์โทร</label>
+        <p>
+          {{ abouts.tel }}
+        </p>
+
+        <label class="col-form-label">อัลบั้ม</label>
+        <div ng-init="getHotelAlbums()">
+          <div class="col-md-3" ng-repeat="album in albums">
+            <a href="#!/hotelAlbum/{{ album.id }}" class="btn btn-info">
+              {{ album.name }}
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Magnific Popup -->
+<script src="../../../js/jquery.magnific-popup.min.js"></script>
