@@ -1,0 +1,66 @@
+<div ng-include="'modules/menu/views/menu.html'"></div>
+
+<header id="fh5co-header" role="banner">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="" class="fh5co-menu-btn js-fh5co-menu-btn">Menu
+          <i class="icon-menu"></i>
+        </a>
+        <a class="navbar-brand" href=""></a>
+      </div>
+    </div>
+  </div>
+
+</header>
+<!-- END .header -->
+<div id="fh5co-main" ng-controller="RestaurantImageController">
+  <div class="container" ng-init="getRestaurantImages()">
+
+    <div class="row text-center">
+      <h3>
+        <label class="col-form-label">
+          {{ name }}
+        </label>
+      </h3>
+    </div>
+
+    <div class="row text-center">
+      <a href="#!/hotelImageProfile" class="btn btn-primary">
+        New&nbsp;Image
+      </a>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3" ng-repeat="RestaurantImage in RestaurantImages">
+
+        <div id="fh5co-board" data-columns>
+          <div class="item" style="height:300px">
+            <div class="animate-box">
+              <div class="row">
+                <div class="col-md-3">
+                  <button class="btn btn-block btn-danger" type="button" style="position: absolute" ng-click="deleteImage(RestaurantImage.id)">
+                    <i class="glyphicon glyphicon-remove"></i>
+                  </button>
+                </div>
+                <div class="col-md-3">
+                  <a href="#!/hotelImageProfile/{{ RestaurantImage.id }}" class="btn btn-warning" style="position: absolute">
+                    <i class="glyphicon glyphicon-edit"></i>
+                  </a>
+                </div>
+              </div>
+              <img style="height:150px" src="{{ RestaurantImage.image_src_url }}" alt="Free HTML5 Bootstrap template" width="100%">
+              <div class="fh5co-desc">{{ hotelImage.detail }}.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Magnific Popup -->
+<script src="../../../js/jquery.magnific-popup.min.js"></script>

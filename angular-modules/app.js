@@ -16,6 +16,9 @@ angular.module('myApp').config(function ($routeProvider) {
     .when('/hotelImage/:id/:name', {
       templateUrl: 'modules/hotelImage/views/hotelImage.html'
     })
+    .when('/restaurantImage/:id/:name', {
+      templateUrl: 'modules/restaurantImage/views/restaurantImage.html'
+    })
     .when('/hotelImageProfile/:albumId/:albumName', {
       templateUrl: 'modules/hotelImageProfile/views/hotelImageProfile.html'
     })

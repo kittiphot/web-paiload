@@ -26,9 +26,6 @@
         <a href="#!/{{ profilePath }}/{{ status }}/{{ id }}" class="btn btn-warning">
           Edit&nbsp;{{ name }}&nbsp;Profile
         </a>
-        <button class="btn btn-danger">
-          Delete&nbsp;{{ name }}&nbsp;Profile
-        </button>
       </div>
     </div>
 
@@ -55,6 +52,33 @@
           {{ abouts.tel }}
         </p>
 
+        <div ng-if="status==1">
+
+            <div class="col-md-12 text-center">
+              <div class="row">
+                <h4>
+                  <label class="col-form-label">
+                    อัลบั้ม
+                  </label>
+                </h4>
+              </div>
+              <div class="row">
+                <a href="#!/" class="btn btn-primary">
+                  New&nbsp;Restaurant_Album
+                </a>
+              </div>
+            </div>
+  
+            <div ng-init="getRestaurantAlbums()">
+              <div class="col-md-3" ng-repeat="value in restaurant">
+                <a href="#!/restaurantImage/{{ value.id }}/{{ value.name }}" class="btn btn-info">
+                  {{ value.name }}
+                </a>
+              </div>
+            </div>
+  
+          </div>
+        <div ng-if="status==2">
 
         <div class="col-md-12 text-center">
           <div class="row">
@@ -68,7 +92,7 @@
 
             <div class="row">
               <a href="#!/" class="btn btn-primary">
-                New&nbsp;Album
+                New&nbsp;Hotel_Album
               </a>
             </div>
 
