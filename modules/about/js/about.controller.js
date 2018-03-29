@@ -5,6 +5,7 @@ angular.module('myApp').controller('aboutController', ['$scope', 'aboutFactory',
   $scope.path = ($scope.status == 1 ? '' : 'hotelProfile');
   $scope.name = ($scope.status == 1 ? 'restaurant' : 'hotel');
   $scope.id = (typeof $routeParams.id != 'undefined' ? $routeParams.id : 0);
+  // restaurantProfile
 
   $scope.getAbout = function () {
     aboutFactory.getAbout($scope.status, $scope.id).then(function successCallback(res) {
