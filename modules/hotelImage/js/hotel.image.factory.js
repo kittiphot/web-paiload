@@ -7,5 +7,9 @@ angular.module('myApp').factory('hotelImageFactory', ['$http', function ($http) 
     return $http.get(api + '/hotel_albums/' + id);
   }
 
+  hotelImageFactory.setHotelImagesStatus = function (param) {
+    return $http.post(api + '/hotelImage/delete', param);
+  }
+
   return hotelImageFactory;
 }]);

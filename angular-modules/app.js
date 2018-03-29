@@ -16,10 +16,10 @@ angular.module('myApp').config(function ($routeProvider) {
     .when('/hotelImage/:id/:name', {
       templateUrl: 'modules/hotelImage/views/hotelImage.html'
     })
-    .when('/hotelImageProfile', {
+    .when('/hotelImageProfile/:albumId/:albumName', {
       templateUrl: 'modules/hotelImageProfile/views/hotelImageProfile.html'
     })
-    .when('/hotelImageProfile/:id', {
+    .when('/hotelImageProfile/:albumId/:albumName/:imageId', {
       templateUrl: 'modules/hotelImageProfile/views/hotelImageProfile.html'
     })
     .when('/register', {

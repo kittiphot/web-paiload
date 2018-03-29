@@ -28,7 +28,7 @@
     </div>
 
     <div class="row text-center">
-      <a href="#!/hotelImageProfile" class="btn btn-primary">
+      <a href="#!/hotelImageProfile/{{ id }}/{{ name }}" class="btn btn-primary">
         New&nbsp;Image
       </a>
     </div>
@@ -41,12 +41,12 @@
             <div class="animate-box">
               <div class="row">
                 <div class="col-md-3">
-                  <button class="btn btn-block btn-danger" type="button" style="position: absolute" ng-click="deleteImage(hotelImage.id)">
+                  <button class="btn btn-block btn-danger" type="button" style="position: absolute" ng-click="setHotelImagesStatus(hotelImage.id)">
                     <i class="glyphicon glyphicon-remove"></i>
                   </button>
                 </div>
                 <div class="col-md-3">
-                  <a href="#!/hotelImageProfile/{{ hotelImage.id }}" class="btn btn-warning" style="position: absolute">
+                  <a href="#!/hotelImageProfile/{{ id }}/{{ name }}/{{ hotelImage.id }}" class="btn btn-warning" style="position: absolute">
                     <i class="glyphicon glyphicon-edit"></i>
                   </a>
                 </div>
