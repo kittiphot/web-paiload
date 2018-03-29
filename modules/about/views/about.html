@@ -23,7 +23,7 @@
 
     <div class="row" ng-controller="aboutController">
       <div class="col-md-12 text-center">
-        <a href="#!/{{ path }}/{{ status }}/{{ id }}" class="btn btn-warning">
+        <a href="#!/{{ profilePath }}/{{ status }}/{{ id }}" class="btn btn-warning">
           Edit&nbsp;{{ name }}&nbsp;Profile
         </a>
         <button class="btn btn-danger">
@@ -55,27 +55,31 @@
           {{ abouts.tel }}
         </p>
 
-        <div class="col-md-12 text-center">
-          <div class="row">
-            <h4>
-              <label class="col-form-label">
-                อัลบั้ม
-              </label>
-            </h4>
-          </div>
-          <div class="row">
-            <a href="#!/" class="btn btn-primary">
-              New&nbsp;Album
-            </a>
-          </div>
-        </div>
+        <div ng-if="status==2">
 
-        <div ng-init="getHotelAlbums()">
-          <div class="col-md-3" ng-repeat="album in albums">
-            <a href="#!/hotelImage/{{ album.id }}/{{ album.name }}" class="btn btn-info">
-              {{ album.name }}
-            </a>
+          <div class="col-md-12 text-center">
+            <div class="row">
+              <h4>
+                <label class="col-form-label">
+                  อัลบั้ม
+                </label>
+              </h4>
+            </div>
+            <div class="row">
+              <a href="#!/" class="btn btn-primary">
+                New&nbsp;Album
+              </a>
+            </div>
           </div>
+
+          <div ng-init="getHotelAlbums()">
+            <div class="col-md-3" ng-repeat="album in albums">
+              <a href="#!/hotelImage/{{ album.id }}/{{ album.name }}" class="btn btn-info">
+                {{ album.name }}
+              </a>
+            </div>
+          </div>
+
         </div>
 
       </div>

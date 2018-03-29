@@ -2,7 +2,7 @@ angular.module('myApp').controller('aboutController', ['$scope', 'aboutFactory',
   $scope.abouts = [];
   $scope.albums = [];
   $scope.status = (typeof $routeParams.status != 'undefined' ? $routeParams.status : 0);
-  $scope.path = ($scope.status == 1 ? '' : 'hotelProfile');
+  $scope.profilePath = ($scope.status == 1 ? '' : 'hotelProfile');
   $scope.name = ($scope.status == 1 ? 'restaurant' : 'hotel');
   $scope.id = (typeof $routeParams.id != 'undefined' ? $routeParams.id : 0);
 

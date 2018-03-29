@@ -20,11 +20,15 @@
   <div class="container" ng-init="getHotelImages()">
 
     <div class="row text-center">
-      {{ name }}
+      <h3>
+        <label class="col-form-label">
+          {{ name }}
+        </label>
+      </h3>
     </div>
 
     <div class="row text-center">
-      <a href="#!/" class="btn btn-primary">
+      <a href="#!/hotelImageProfile" class="btn btn-primary">
         New&nbsp;Image
       </a>
     </div>
@@ -42,14 +46,12 @@
                   </button>
                 </div>
                 <div class="col-md-3">
-                  <a href="#!/hotelProfile/{{ status }}/{{ id }}" class="btn btn-warning" style="position: absolute">
+                  <a href="#!/hotelImageProfile/{{ hotelImage.id }}" class="btn btn-warning" style="position: absolute">
                     <i class="glyphicon glyphicon-edit"></i>
                   </a>
                 </div>
               </div>
-              <a href="#!/about/2/{{ hotelImage.id }}" class="image-popup fh5co-board-img" title="{{ hotelImage.detail }}">
-                <img style="height:150px" src="{{ hotelImage.image_src_url }}" alt="Free HTML5 Bootstrap template" width="100%">
-              </a>
+              <img style="height:150px" src="{{ hotelImage.image_src_url }}" alt="Free HTML5 Bootstrap template" width="100%">
               <div class="fh5co-desc">{{ hotelImage.detail }}.</div>
             </div>
           </div>
