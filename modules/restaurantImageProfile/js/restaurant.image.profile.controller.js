@@ -26,7 +26,7 @@ angular.module('myApp').controller('restaurantImageProfileController', ['$scope'
       id: $scope.imageId,
       id_album: $scope.albumId,
       image: (typeof $scope.restaurantImageProfiles.image != 'undefined' ? $scope.restaurantImageProfiles.image : $scope.restaurantImageProfiles.old_image),
-      old_image: ($scope.imageId == 0 ? 'default_small.png' : $scope.restaurantImageProfiles.old_image),
+      // old_image: ($scope.imageId == 0 ? 'default_small.png' : $scope.restaurantImageProfiles.old_image),
       detail: (typeof $scope.restaurantImageProfiles.detail != 'undefined' ? $scope.restaurantImageProfiles.detail : '')
     }
     console.log(params);
