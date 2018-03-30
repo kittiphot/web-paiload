@@ -46,5 +46,17 @@ angular.module('myApp').controller('aboutController', ['$scope', 'aboutFactory',
       console.log(err)
     })
   }
+  $scope.setRestaurantStatus = function () {
+    let param = {
+      id: $scope.id
+    }
+    console.log(param);
+    aboutFactory.setRestaurantStatus(param).then(function successCallback(res) {
+      console.log(res.data)
+      // $window.location.href = '#!/';
+    }, function errorCallback(err) {
+      console.log(err)
+    })
+  }
 
 }]);

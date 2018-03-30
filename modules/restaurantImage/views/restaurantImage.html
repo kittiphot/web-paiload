@@ -27,31 +27,39 @@
     </div>
 
     <div class="row text-center">
-      <a href="#!/hotelImageProfile" class="btn btn-primary">
-        New&nbsp;Image
-      </a>
+      <div class="col-md-12">
+        <a href="#!/restaurantImageProfile/{{ albumId }}/{{ restaurantId }}/{{ status }}/{{ name }}" class="btn btn-primary">
+          <i class="glyphicon glyphicon-plus"></i>&nbsp;New&nbsp;Image
+        </a>
+        <a href="#!/restaurantAlbumProfile/{{ restaurantId }}/{{ status }}/{{ albumId }}" class="btn btn-warning">
+          <i class="glyphicon glyphicon-edit"></i>&nbsp;Edit&nbsp;Album
+        </a>
+        <button class="btn btn-danger" type="button" ng-click="setRestaurantAlbumStatus()">
+          <i class="glyphicon glyphicon-remove"></i>&nbsp;Delete&nbsp;Album
+        </button>
+      </div>
     </div>
 
     <div class="row">
-      <div class="col-md-3" ng-repeat="RestaurantImage in RestaurantImages">
+      <div class="col-md-3 col-xs-12" ng-repeat="restaurantImage in RestaurantImages">
 
         <div id="fh5co-board" data-columns>
           <div class="item" style="height:300px">
             <div class="animate-box">
               <div class="row">
-                <div class="col-md-3">
-                  <button class="btn btn-block btn-danger" type="button" style="position: absolute" ng-click="deleteImage(RestaurantImage.id)">
+                <div class="col-md-3 col-xs-3">
+                  <button class="btn btn-block btn-danger" type="button" style="position: absolute" ng-click="setRestaurantImagesStatus(restaurantImage.id)">
                     <i class="glyphicon glyphicon-remove"></i>
                   </button>
                 </div>
-                <div class="col-md-3">
-                  <a href="#!/hotelImageProfile/{{ RestaurantImage.id }}" class="btn btn-warning" style="position: absolute">
+                <div class="col-md-3 col-xs-3">
+                  <a href="#!/restaurantImageProfile/{{ albumId }}/{{ restaurantId }}/{{ status }}/{{ name }}/{{ restaurantImage.id }}" class="btn btn-warning" style="position: absolute">
                     <i class="glyphicon glyphicon-edit"></i>
                   </a>
                 </div>
               </div>
-              <img style="height:150px" src="{{ RestaurantImage.image_src_url }}" alt="Free HTML5 Bootstrap template" width="100%">
-              <div class="fh5co-desc">{{ hotelImage.detail }}.</div>
+              <img style="height:150px" src="{{ restaurantImage.image_src_url }}" alt="Free HTML5 Bootstrap template" width="100%">
+              <div class="fh5co-desc">{{ restaurantImage.detail }}.</div>
             </div>
           </div>
         </div>

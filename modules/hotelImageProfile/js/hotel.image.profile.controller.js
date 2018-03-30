@@ -25,7 +25,7 @@ angular.module('myApp').controller('hotelImageProfileController', ['$scope', 'ho
       id: $scope.imageId,
       id_album: $scope.albumId,
       image: (typeof $scope.hotelImageProfiles.image != 'undefined' ? $scope.hotelImageProfiles.image : $scope.hotelImageProfiles.old_image),
-      old_image: ($scope.imageId == 0 ? 'default_small.png' : $scope.hotelImageProfiles.old_image),
+      // old_image: ($scope.imageId == 0 ? 'default_small.png' : $scope.hotelImageProfiles.old_image),
       detail: (typeof $scope.hotelImageProfiles.detail != 'undefined' ? $scope.hotelImageProfiles.detail : '')
     }
     console.log(params);

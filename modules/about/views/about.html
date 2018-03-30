@@ -23,10 +23,10 @@
 
     <div class="row" ng-controller="aboutController">
       <div class="col-md-12 text-center" ng-if="status == 1">
-        <a href="#!/hotelProfile/{{ status }}/{{ id }}" class="btn btn-warning">
+        <a href="#!/restaurantProfile/{{ status }}/{{ id }}" class="btn btn-warning">
           <i class="glyphicon glyphicon-edit"></i>&nbsp;Edit&nbsp;restaurant&nbsp;Profile
         </a>
-        <button type="button" class="btn btn-danger" ng-click="setHotelStatus()">
+        <button type="button" class="btn btn-danger" ng-click="setRestaurantStatus()">
           <i class="glyphicon glyphicon-remove"></i>&nbsp;Delete&nbsp;restaurant&nbsp;Profile
         </button>
       </div>
@@ -71,6 +71,7 @@
               </div>
             </div>
             <div class="row">
+<<<<<<< HEAD
               <div class="col-md-12">
                 <div class="panel panel-default">
                   <div class="panel-heading">
@@ -81,6 +82,11 @@
                   <div class="panel-body">{{ abouts.extension }}</div>
                 </div>
               </div>
+=======
+              <a href="#!/restaurantAlbumProfile/{{ id }}/{{ status }}" class="btn btn-primary">
+                <i class="glyphicon glyphicon-plus"></i>&nbsp;New&nbsp;Restaurant&nbsp;Album
+              </a>
+>>>>>>> b64b7980365445f89022346bd48388f73f83900e
             </div>
           </div>
           <div class="col-md-5">
@@ -150,7 +156,15 @@
                   </div>
                 </div>
 
+<<<<<<< HEAD
               </div>
+=======
+          <div ng-init="getRestaurantAlbums()">
+            <div class="col-md-3" ng-repeat="value in restaurant">
+              <a href="#!/restaurantImage/{{ value.id }}/{{ id }}/{{ status }}/{{ value.name }}" class="btn btn-info">
+                {{ value.name }}
+              </a>
+>>>>>>> b64b7980365445f89022346bd48388f73f83900e
             </div>
           </div>
         </div>

@@ -1,0 +1,55 @@
+<div ng-include="'modules/menu/views/menu.html'"></div>
+
+<header id="fh5co-header" role="banner">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="" class="fh5co-menu-btn js-fh5co-menu-btn">Menu
+          <i class="icon-menu"></i>
+        </a>
+        <a class="navbar-brand" href=""></a>
+      </div>
+    </div>
+  </div>
+
+</header>
+<!-- END .header -->
+
+<div id="fh5co-main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>Restaurant</h2>
+        <div class="fh5co-spacer fh5co-spacer-sm"></div>
+        <form ng-submit="submit()" ng-controller="restaurantAlbumProfileController" ng-init="getRestaurantAlbumProfile()">
+          <div class="row">
+
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Name</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Name" ng-model="restaurantAlbumProfiles.name" required>
+              </div>
+            </div>
+
+            <div class="col-md-12 text-right">
+              <div class="form-group">
+                <button type="submit" class="btn btn-success">Save</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Magnific Popup -->
+<script src="../../../js/jquery.magnific-popup.min.js"></script>
