@@ -26,7 +26,7 @@
         <a href="#!/restaurantProfile/{{ status }}/{{ id }}" class="btn btn-warning">
           <i class="glyphicon glyphicon-edit"></i>&nbsp;Edit&nbsp;restaurant&nbsp;Profile
         </a>
-        <button type="button" class="btn btn-danger" ng-click="setHotelStatus()">
+        <button type="button" class="btn btn-danger" ng-click="setRestaurantStatus()">
           <i class="glyphicon glyphicon-remove"></i>&nbsp;Delete&nbsp;restaurant&nbsp;Profile
         </button>
       </div>
@@ -82,7 +82,7 @@
 
           <div ng-init="getRestaurantAlbums()">
             <div class="col-md-3" ng-repeat="value in restaurant">
-              <a href="#!/restaurantImage/{{ value.id }}/{{ value.name }}" class="btn btn-info">
+              <a href="#!/restaurantImage/{{ value.id }}/{{ id }}/{{ status }}/{{ value.name }}" class="btn btn-info">
                 {{ value.name }}
               </a>
             </div>

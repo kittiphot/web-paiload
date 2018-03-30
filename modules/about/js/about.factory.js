@@ -22,6 +22,8 @@ angular.module('myApp').factory('aboutFactory', ['$http', function ($http) {
   aboutFactory.setHotelStatus = function (param) {
     return $http.post(api + '/hotels/delete', param);
   }
-
+  aboutFactory.setRestaurantStatus = function (param) {
+    return $http.post(api + '/restaurants/delete', param);
+  }
   return aboutFactory;
 }]);

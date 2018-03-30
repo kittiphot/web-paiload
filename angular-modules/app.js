@@ -19,7 +19,7 @@ angular.module('myApp').config(function ($routeProvider) {
     .when('/hotelAlbumProfile/:hotelId/:status', {
       templateUrl: 'modules/hotelAlbumProfile/views/hotelAlbumProfile.html'
     })
-    .when('/restaurantAlbumProfile/:id/:status', {
+    .when('/restaurantAlbumProfile/:restaurantId/:status', {
       templateUrl: 'modules/restaurantAlbumProfile/views/restaurantAlbumProfile.html'
     })
     .when('/hotelAlbumProfile/:hotelId/:status/:albumId', {
@@ -34,10 +34,16 @@ angular.module('myApp').config(function ($routeProvider) {
     .when('/hotelImageProfile/:albumId/:hotelId/:status/:albumName/:imageId', {
       templateUrl: 'modules/hotelImageProfile/views/hotelImageProfile.html'
     })
+    .when('/restaurantImageProfile/:albumId/:restaurantId/:status/:name', {
+      templateUrl: 'modules/restaurantImageProfile/views/restaurantImageProfile.html'
+    })
+    .when('/restaurantImageProfile/:albumId/:restaurantId/:status/:name/:imageId', {
+      templateUrl: 'modules/restaurantImageProfile/views/restaurantImageProfile.html'
+    })
     .when('/restaurantProfile/:status/:id', {
       templateUrl: 'modules/restaurantProfile/views/restaurantProfile.html'
     })
-    .when('/restaurantImage/:id/:name', {
+    .when('/restaurantImage/:albumId/:restaurantId/:status/:name', {
       templateUrl: 'modules/restaurantImage/views/restaurantImage.html'
     })
     .when('/register', {
