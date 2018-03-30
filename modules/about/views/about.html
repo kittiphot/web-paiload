@@ -23,7 +23,7 @@
     
     <div class="row" ng-controller="aboutController">
       <div class="col-md-12 text-center" ng-if="status == 1">
-        <a href="#!/hotelProfile/{{ status }}/{{ id }}" class="btn btn-warning">
+        <a href="#!/restaurantProfile/{{ status }}/{{ id }}" class="btn btn-warning">
           <i class="glyphicon glyphicon-edit"></i>&nbsp;Edit&nbsp;restaurant&nbsp;Profile
         </a>
         <button type="button" class="btn btn-danger" ng-click="setHotelStatus()">
@@ -74,7 +74,7 @@
               </h4>
             </div>
             <div class="row">
-              <a href="#!/" class="btn btn-primary">
+              <a href="#!/restaurantAlbumProfile/{{ id }}/{{ status }}" class="btn btn-primary">
                 <i class="glyphicon glyphicon-plus"></i>&nbsp;New&nbsp;Restaurant&nbsp;Album
               </a>
             </div>

@@ -9,7 +9,8 @@ angular.module('myApp').controller('RestaurantsProfileController', ['$scope', 'R
       $scope.RestaurantProfiles.name = res.data.name;
       $scope.RestaurantProfiles.mobile = res.data.mobile;
       $scope.RestaurantProfiles.phone = res.data.phone;
-      $scope.RestaurantProfiles.image = res.data.image;
+      // $scope.RestaurantProfiles.image = res.data.image;
+      $scope.RestaurantProfiles.old_image = res.data.image;
       $scope.RestaurantProfiles.address = res.data.address;
       $scope.RestaurantProfiles.latitude = res.data.latitude;
       $scope.RestaurantProfiles.longitude = res.data.longitude;
@@ -27,8 +28,8 @@ angular.module('myApp').controller('RestaurantsProfileController', ['$scope', 'R
     let params = {
       id: $scope.id,
       name: (typeof $scope.RestaurantProfiles.name != 'undefined' ? $scope.RestaurantProfiles.name : ''),
-      image: (typeof $scope.RestaurantProfiles.image != 'undefined' ? $scope.RestaurantProfiles.image : $scope.hotelProfiles.old_image),
-      // old_image: ($scope.id == 0 ? 'default_small.png' : $scope.RestaurantProfiles.old_image),
+      image: (typeof $scope.RestaurantProfiles.image != 'undefined' ? $scope.RestaurantProfiles.image : $scope.RestaurantProfiles.old_image),
+      old_image: ($scope.id == 0 ? 'default_small.png' : $scope.RestaurantProfiles.old_image),
       mobile: (typeof $scope.RestaurantProfiles.mobile != 'undefined' ? $scope.RestaurantProfiles.mobile : ''),
       phone: (typeof $scope.RestaurantProfiles.phone != 'undefined' ? $scope.RestaurantProfiles.phone : ''),
       address: (typeof $scope.RestaurantProfiles.address != 'undefined' ? $scope.RestaurantProfiles.address : ''),

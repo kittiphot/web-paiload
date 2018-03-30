@@ -19,6 +19,9 @@ angular.module('myApp').config(function ($routeProvider) {
     .when('/hotelAlbumProfile/:hotelId/:status', {
       templateUrl: 'modules/hotelAlbumProfile/views/hotelAlbumProfile.html'
     })
+    .when('/restaurantAlbumProfile/:id/:status', {
+      templateUrl: 'modules/restaurantAlbumProfile/views/restaurantAlbumProfile.html'
+    })
     .when('/hotelAlbumProfile/:hotelId/:status/:albumId', {
       templateUrl: 'modules/hotelAlbumProfile/views/hotelAlbumProfile.html'
     })
