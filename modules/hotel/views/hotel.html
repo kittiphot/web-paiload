@@ -13,14 +13,14 @@
     </div>
   </div>
 
-  <div class="container" style="padding-left:20%;padding-right:20%;">
+  <div class="container" style="padding-left:20%;padding-right:20%;" ng-controller="hotelController">
     <div class="row">
       <div class="col-md-12">
         <div id="custom-search-input">
           <div class="input-group col-md-12">
-            <input type="text" class="form-control input-lg" placeholder="Search..." />
+            <input type="text" class="form-control input-lg" placeholder="Search..." ng-model="hotels.search">
             <span class="input-group-btn">
-              <button class="btn btn-info btn-lg" type="button">
+              <button class="btn btn-info btn-lg" type="button" ng-click="getHotelBySearch()">
                 <i class="glyphicon glyphicon-search"></i>
               </button>
             </span>
@@ -33,22 +33,46 @@
 </header>
 <!-- END .header -->
 
-<div id="fh5co-main" ng-controller="hotelController">
-  <div class="container" ng-init="getHotels()" style="margin-top: 100px">
+<div id="fh5co-main">
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <a href="#!/" class="btn btn-primary">Restaurant</a>
+      <a href="#!/hotel" class="btn btn-primary">Hotel</a>
+    </div>
+  </div>
+
+  <!-- <div class="container" ng-controller="hotelController" ng-init="getHotels()" style="margin-top: 100px"> -->
+  <div class="container" ng-controller="hotelController" ng-init="getHotelBySearch()" style="margin-top: 100px">
 
     <div class="row">
       <div class="col-md-3" ng-repeat="hotel in hotels">
 
-        <div id="fh5co-board" data-columns>
+        <div class="panel card" style="border: 1px solid gray; border-radius: 5px">
+          <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+          <a href="#!/about/2/{{ hotel.id }}" class="image-popup fh5co-board-img" title="{{ hotel.detail }}">
+            <img class="card-img-top" style="height:150px" src="{{ hotel.image_url }}" alt="Free HTML5 Bootstrap template" width="100%">
+          </a>
+          <div class="card-body" style="padding: 20px">
+            <h4 class="card-title text-center">
+              {{ hotel.name }}
+            </h4>
+            <p class="card-text">
+              <div ng-bind-html="hotel.detail"></div>
+            </p>
+          </div>
+        </div>
+
+        <!-- <div id="fh5co-board" data-columns>
           <div class="item" style="height:300px">
-            <div class="animate-box">
+            <div class="animate-box">{{hotel.name}}
               <a href="#!/about/2/{{ hotel.id }}" class="image-popup fh5co-board-img" title="{{ hotel.detail }}">
                 <img style="height:150px" src="{{ hotel.image_url }}" alt="Free HTML5 Bootstrap template" width="100%">
               </a>
             </div>
-            <div class="fh5co-desc">{{hotel.address}}.</div>
+            <div class="fh5co-desc">{{hotel.detail}}</div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>

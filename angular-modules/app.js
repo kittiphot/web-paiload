@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngRoute', 'ngFileUpload']);
+angular.module('myApp', ['ngRoute', 'ngFileUpload', 'ngSanitize']);
 angular.module('myApp').config(function ($routeProvider) {
   $routeProvider
     .when('/', {

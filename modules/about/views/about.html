@@ -19,8 +19,8 @@
 <!-- END .header -->
 
 <div id="fh5co-main">
-  <div class="container">
-    
+  <div class="container" ng-controller="aboutController" ng-init="getAbout()">
+
     <div class="row" ng-controller="aboutController">
       <div class="col-md-12 text-center" ng-if="status == 1">
         <a href="#!/hotelProfile/{{ status }}/{{ id }}" class="btn btn-warning">
@@ -40,86 +40,188 @@
       </div>
     </div>
 
-    <div class="row" ng-controller="aboutController" ng-init="getAbout()">
-      <div class="col-md-8 col-md-offset-2">
-
+    <div class="panel">
+      <div class="panel-heading">
         <h2 style="text-align: center">{{ abouts.name }}</h2>
-        <p>
-          <img src="{{ abouts.image_url }}" alt="Free HTML5 template by FREEHTML5.co" class="img-rounded img-responsive" width="100%">
-        </p>
+      </div>
+      <div class="panel-body">
 
-        <label class="col-form-label">รายละเอียด</label>
-        <p>
-          {{ abouts.detail }}
-        </p>
-
-        <label class="col-form-label">ที่อยู่</label>
-        <p>
-          {{ abouts.address }}
-        </p>
-
-        <label class="col-form-label">เบอร์โทร</label>
-        <p>
-          {{ abouts.tel }}
-        </p>
-
-        <div ng-if="status==1">
-
+        <div class="row">
           <div class="col-md-12 text-center">
-            <div class="row">
-              <h4>
-                <label class="col-form-label">
-                  อัลบั้ม
-                </label>
-              </h4>
-            </div>
-            <div class="row">
-              <a href="#!/" class="btn btn-primary">
-                <i class="glyphicon glyphicon-plus"></i>&nbsp;New&nbsp;Restaurant&nbsp;Album
-              </a>
+            <div class="panel">
+              <img src="{{ abouts.image_url }}" alt="Free HTML5 template by FREEHTML5.co" class="img-rounded img-responsive" width="100%">
             </div>
           </div>
-
-          <div ng-init="getRestaurantAlbums()">
-            <div class="col-md-3" ng-repeat="value in restaurant">
-              <a href="#!/restaurantImage/{{ value.id }}/{{ value.name }}" class="btn btn-info">
-                {{ value.name }}
-              </a>
-            </div>
-          </div>
-
         </div>
-        <div ng-if="status==2">
 
-          <div class="col-md-12 text-center">
+        <div class="row">
+          <div class="col-md-7">
             <div class="row">
-              <h4>
-                <label class="col-form-label">
-                  อัลบั้ม
-                </label>
-              </h4>
+              <div class="col-md-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="col-form-label">
+                      <i class="fas fa-info"></i>&nbsp;รายละเอียด
+                    </h4>
+                  </div>
+                  <div class="panel-body">
+                    <div ng-bind-html="abouts.detail"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-
             <div class="row">
-              <a href="#!/hotelAlbumProfile/{{ id }}/{{ status }}" class="btn btn-primary">
-                <i class="glyphicon glyphicon-plus"></i>&nbsp;New&nbsp;Hotel&nbsp;Album
-              </a>
-            </div>
-
-            <div ng-init="getHotelAlbums()">
-              <div class="col-md-3" ng-repeat="album in albums">
-                <a href="#!/hotelImage/{{ album.id }}/{{ id }}/{{ status }}/{{ album.name }}" class="btn btn-info" style="text-transform:unset">
-                  {{ album.name }}
-                </a>
+              <div class="col-md-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="col-form-label">
+                      <i class="fas fa-puzzle-piece"></i>&nbsp;Extension
+                    </h4>
+                  </div>
+                  <div class="panel-body">{{ abouts.extension }}</div>
+                </div>
               </div>
             </div>
           </div>
+          <div class="col-md-5">
+            <div class="panel panel-default">
+              <div class="panel-body">
 
+                <div class="row">
+                  <div class="col-md-12">
+                    <h4 class="col-form-label">
+                      <i class="fas fa-globe"></i>&nbsp;Hotel&nbsp;Site
+                    </h4>
+                    <a href="https://abouts.hotel_site">{{ abouts.hotel_site }}</a>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4 class="col-form-label">
+                      <i class="far fa-money-bill-alt"></i>&nbsp;ราคา : วัน
+                    </h4>
+                    {{ abouts.price }}
+                  </div>
+                  <div class="col-md-6">
+                    <h4 class="col-form-label">
+                      <i class="far fa-money-bill-alt"></i>&nbsp;ราคา : เดือน
+                    </h4>
+                    {{ abouts.price_month }}
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <h4 class="col-form-label">
+                      <i class="fas fa-map-marker-alt"></i>&nbsp;ที่อยู่
+                    </h4>
+                    {{ abouts.address }}
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4 class="col-form-label">
+                      <i class="far fa-building"></i>&nbsp;Hotel&nbsp;Promotion
+                    </h4>
+                    {{ abouts.hotel_promotion }}
+                  </div>
+                  <div class="col-md-6">
+                    <h4 class="col-form-label">
+                      <i class="far fa-building"></i>&nbsp;Zone&nbsp;Id
+                    </h4>
+                    {{ abouts.zone_id }}
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4 class="col-form-label">
+                      <i class="fas fa-users"></i>&nbsp;Visitor
+                    </h4>
+                    {{ abouts.visitor }}
+                  </div>
+                  <div class="col-md-6">
+                    <h4 class="col-form-label">
+                      <i class="fas fa-phone"></i>&nbsp;Tel
+                    </h4>
+                    {{ abouts.tel }}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4 class="col-form-label">
+                      <i class="far fa-images"></i>&nbsp;อัลบั้ม
+                    </h4>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <a href="#!/" class="btn btn-primary">
+                      <i class="glyphicon glyphicon-plus"></i>&nbsp;New&nbsp;Restaurant&nbsp;Album
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-body">
+
+                <div ng-if="status==1">
+                  <!-- <div class="col-md-12 text-center">
+                    <div class="row">
+                      <a href="#!/" class="btn btn-primary">
+                        <i class="glyphicon glyphicon-plus"></i>&nbsp;New&nbsp;Restaurant&nbsp;Album
+                      </a>
+                    </div>
+                  </div> -->
+
+                  <div ng-init="getRestaurantAlbums()">
+                    <div class="col-md-3" ng-repeat="value in restaurant">
+                      <a href="#!/restaurantImage/{{ value.id }}/{{ value.name }}" class="btn btn-info">
+                        {{ value.name }}
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+                <div ng-if="status==2">
+                  <div class="col-md-12 text-center">
+
+                    <!-- <div class="row">
+                      <a href="#!/hotelAlbumProfile/{{ id }}/{{ status }}" class="btn btn-primary">
+                        <i class="glyphicon glyphicon-plus"></i>&nbsp;New&nbsp;Hotel&nbsp;Album
+                      </a>
+                    </div> -->
+
+                    <div ng-init="getHotelAlbums()">
+                      <div class="col-md-3" ng-repeat="album in albums">
+                        <a href="#!/hotelImage/{{ album.id }}/{{ id }}/{{ status }}/{{ album.name }}" class="btn btn-info" style="text-transform:unset">
+                          {{ album.name }}
+                        </a>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-
     </div>
-  </div>
 
-  <!-- Magnific Popup -->
-  <script src="../../../js/jquery.magnific-popup.min.js"></script>
+  </div>
+</div>
+
+<!-- Magnific Popup -->
+<script src="../../../js/jquery.magnific-popup.min.js"></script>

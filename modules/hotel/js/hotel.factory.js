@@ -7,5 +7,9 @@ angular.module('myApp').factory('hotelFactory', ['$http', function($http) {
         return $http.get(api + '/hotels');
       }
 
+      hotelFactory.getHotelBySearch = function (param) {
+        return $http.post(api + '/hotels/search', param);
+      }
+
       return hotelFactory;
     }]);
