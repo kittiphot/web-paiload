@@ -10,10 +10,11 @@ angular.module('myApp').controller('restaurantImageProfileController', ['$scope'
     if ($scope.imageId != 0) {
       restaurantImageProfileFactory.getRestaurantImageProfile($scope.imageId).then(function successCallback(res) {
         console.log(res.data)
-        $scope.restaurantImageProfiles.image = res.data.image_url;
+        $scope.restaurantImageProfiles.image = res.data.image_src_url;
         $scope.restaurantImageProfiles.old_image = res.data.image_src;
         $scope.restaurantImageProfiles.detail = res.data.detail;
         // $scope.hotelImageProfiles = res.data;
+
       }, function errorCallback(err) {
         console.log(err)
       })

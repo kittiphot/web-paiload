@@ -25,6 +25,9 @@ angular.module('myApp').config(function ($routeProvider) {
     .when('/hotelAlbumProfile/:hotelId/:status/:albumId', {
       templateUrl: 'modules/hotelAlbumProfile/views/hotelAlbumProfile.html'
     })
+    .when('/restaurantAlbumProfile/:restaurantId/:status/:albumId', {
+      templateUrl: 'modules/restaurantAlbumProfile/views/restaurantAlbumProfile.html'
+    })
     .when('/hotelImage/:albumId/:hotelId/:status/:name', {
       templateUrl: 'modules/hotelImage/views/hotelImage.html'
     })

@@ -4,7 +4,7 @@ angular.module('myApp').factory('restaurantImageProfileFactory', ['$http', 'Uplo
   var restaurantImageProfileFactory = {};
 
   restaurantImageProfileFactory.getRestaurantImageProfile = function (id) {
-    return $http.get(api + '/restaurant_profile_albums/' + id);
+    return $http.get(api + '/restaurant_get_image/' + id);
   }
 
   restaurantImageProfileFactory.setRestaurantImage = function (params) {

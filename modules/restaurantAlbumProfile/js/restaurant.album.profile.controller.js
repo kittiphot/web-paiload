@@ -1,5 +1,5 @@
 angular.module('myApp').controller('restaurantAlbumProfileController', ['$scope', 'restaurantAlbumProfileFactory', '$routeParams', '$window', function ($scope, restaurantAlbumProfileFactory, $routeParams, $window) {
-  $scope.hotelAlbumProfiles = {};
+  $scope.restaurantAlbumProfiles = {};
   $scope.restaurantId = (typeof $routeParams.restaurantId != 'undefined' ? $routeParams.restaurantId : 0);
   $scope.status = (typeof $routeParams.status != 'undefined' ? $routeParams.status : 0);
   $scope.albumId = (typeof $routeParams.albumId != 'undefined' ? $routeParams.albumId : 0);
@@ -20,7 +20,7 @@ angular.module('myApp').controller('restaurantAlbumProfileController', ['$scope'
     let params = {
       id: $scope.albumId,
       restaurantId: $scope.restaurantId,
-      name: $scope.hotelAlbumProfiles.name
+      name: $scope.restaurantAlbumProfiles.name
     }
     console.log(params);
     restaurantAlbumProfileFactory.setrestaurantAlbum(params).then(function successCallback(res) {

@@ -21,25 +21,25 @@ angular.module('myApp').controller('RestaurantImageController', ['$scope', 'Rest
     })
   }
 
-  $scope.setHotelImagesStatus = function (imageId) {
+  $scope.setRestaurantImagesStatus = function (imageId) {
     let param = {
       id: imageId
     }
-    RestaurantImageFactory.setHotelImagesStatus(param).then(function successCallback(res) {
+    RestaurantImageFactory.setRestaurantImagesStatus(param).then(function successCallback(res) {
       console.log(res.data)
-      $scope.getHotelImages();
+      $scope.getRestaurantImages();
     }, function errorCallback(err) {
       console.log(err)
     })
   }
 
-  $scope.setHotelAlbumStatus = function () {
+  $scope.setRestaurantAlbumStatus = function () {
     let param = {
       id: $scope.albumId
     }
-    RestaurantImageFactory.setHotelAlbumStatus(param).then(function successCallback(res) {
+    RestaurantImageFactory.setRestaurantAlbumStatus(param).then(function successCallback(res) {
       console.log(res.data)
-      $window.location.href = '#!/about/' + $scope.status + '/' + $scope.hotelId;
+      $window.location.href = '#!/about/' + $scope.status + '/' + $scope.restaurantId;
     }, function errorCallback(err) {
       console.log(err)
     })

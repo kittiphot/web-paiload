@@ -7,12 +7,12 @@ angular.module('myApp').factory('RestaurantImageFactory', ['$http', function ($h
     return $http.get(api + '/restaurant_profile_albums/' + id);
   }
 
-  RestaurantImageFactory.setHotelImagesStatus = function (param) {
-    return $http.post(api + '/hotelImage/delete', param);
+  RestaurantImageFactory.setRestaurantImagesStatus = function (param) {
+    return $http.post(api + '/restaurant_profile_albums/delete', param);
   }
 
-  RestaurantImageFactory.setHotelAlbumStatus = function (param) {
-    return $http.post(api + '/hotelAlbum/delete', param);
+  RestaurantImageFactory.setRestaurantAlbumStatus = function (param) {
+    return $http.post(api + '/restaurant_album/delete', param);
   }
 
   return RestaurantImageFactory;
