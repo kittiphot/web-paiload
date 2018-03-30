@@ -33,9 +33,10 @@
             <div class="col-md-10">
               <div class="form-group">
                 <img ngf-thumbnail="hotelImageProfiles.image || 'images/default_small.png'" style="width: 150px; height: 150px;">
+                &nbsp;
                 <div class="btn btn-info" ngf-select ng-model="hotelImageProfiles.image" name="image" ngf-pattern="'image/*'" ngf-accept="'image/*'"
                   ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 300, height: 300}">
-                  Select
+                  <i class="glyphicon glyphicon-picture"></i>&nbsp;Select
                 </div>
               </div>
             </div>
@@ -55,7 +56,9 @@
             <div class="col-md-12 text-right">
               <div class="form-group">
                 <input type="hidden" class="form-control" ng-model="image">
-                <button type="submit" class="btn btn-success">Save</button>
+                <button type="submit" class="btn btn-success">
+                  <i class="glyphicon glyphicon-save"></i>&nbsp;Save
+                </button>
               </div>
             </div>
 

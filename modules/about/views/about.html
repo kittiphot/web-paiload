@@ -108,7 +108,7 @@
 
             <div ng-init="getHotelAlbums()">
               <div class="col-md-3" ng-repeat="album in albums">
-                <a href="#!/hotelImage/{{ album.id }}/{{ id }}/{{ status }}/{{ album.name }}" class="btn btn-info">
+                <a href="#!/hotelImage/{{ album.id }}/{{ id }}/{{ status }}/{{ album.name }}" class="btn btn-info" style="text-transform:unset">
                   {{ album.name }}
                 </a>
               </div>
