@@ -11,5 +11,9 @@ angular.module('myApp').factory('hotelImageFactory', ['$http', function ($http) 
     return $http.post(api + '/hotelImage/delete', param);
   }
 
+  hotelImageFactory.setHotelAlbumStatus = function (param) {
+    return $http.post(api + '/hotelAlbum/delete', param);
+  }
+
   return hotelImageFactory;
 }]);

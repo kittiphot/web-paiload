@@ -1,9 +1,7 @@
-angular.module('myApp').controller('aboutController', ['$scope', 'aboutFactory', '$routeParams', function ($scope, aboutFactory, $routeParams) {
+angular.module('myApp').controller('aboutController', ['$scope', 'aboutFactory', '$routeParams', '$window', function ($scope, aboutFactory, $routeParams, $window) {
   $scope.abouts = [];
   $scope.albums = [];
   $scope.status = (typeof $routeParams.status != 'undefined' ? $routeParams.status : 0);
-  $scope.profilePath = ($scope.status == 1 ? '' : 'hotelProfile');
-  $scope.name = ($scope.status == 1 ? 'restaurant' : 'hotel');
   $scope.id = (typeof $routeParams.id != 'undefined' ? $routeParams.id : 0);
   // restaurantProfile
 
@@ -34,13 +32,17 @@ angular.module('myApp').controller('aboutController', ['$scope', 'aboutFactory',
     })
   }
 
-  // $scope.getHotelImages = function (id) {
-  //   aboutFactory.getHotelImages(id).then(function successCallback(res) {
-  //     console.log(res.data)
-  //     $scope.images = res.data;
-  //   }, function errorCallback(err) {
-  //     console.log(err)
-  //   })
-  // }
+  $scope.setHotelStatus = function () {
+    let param = {
+      id: $scope.id
+    }
+    console.log(param);
+    aboutFactory.setHotelStatus(param).then(function successCallback(res) {
+      console.log(res.data)
+      $window.location.href = '#!/hotel';
+    }, function errorCallback(err) {
+      console.log(err)
+    })
+  }
 
 }]);

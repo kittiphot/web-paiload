@@ -14,13 +14,14 @@ angular.module('myApp').factory('aboutFactory', ['$http', function ($http) {
   aboutFactory.getHotelAlbums = function (id) {
     return $http.get(api + '/hotel_profile_albums/' + id);
   }
+
   aboutFactory.getRestaurantAlbums = function (id) {
     return $http.get(api + '/restaurant_albums/' + id);
   }
-
-  // aboutFactory.getHotelImages = function (id) {
-  //   return $http.get(api + '/hotel_albums/' + id);
-  // }
+  
+  aboutFactory.setHotelStatus = function (param) {
+    return $http.post(api + '/hotels/delete', param);
+  }
 
   return aboutFactory;
 }]);

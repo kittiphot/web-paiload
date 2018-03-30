@@ -28,9 +28,14 @@
     </div>
 
     <div class="row text-center">
-      <a href="#!/hotelImageProfile/{{ id }}/{{ name }}" class="btn btn-primary">
-        New&nbsp;Image
-      </a>
+      <div class="col-md-12">
+        <a href="#!/hotelImageProfile/{{ albumId }}/{{ hotelId }}/{{ status }}/{{ name }}" class="btn btn-primary">
+          <i class="glyphicon glyphicon-plus"></i>&nbsp;New&nbsp;Image
+        </a>
+        <button class="btn btn-danger" type="button" ng-click="setHotelAlbumStatus()">
+          <i class="glyphicon glyphicon-remove"></i>&nbsp;Delete&nbsp;Album
+        </button>
+      </div>
     </div>
 
     <div class="row">
@@ -46,7 +51,7 @@
                   </button>
                 </div>
                 <div class="col-md-3">
-                  <a href="#!/hotelImageProfile/{{ id }}/{{ name }}/{{ hotelImage.id }}" class="btn btn-warning" style="position: absolute">
+                  <a href="#!/hotelImageProfile/{{ albumId }}/{{ hotelId }}/{{ status }}/{{ name }}/{{ hotelImage.id }}" class="btn btn-warning" style="position: absolute">
                     <i class="glyphicon glyphicon-edit"></i>
                   </a>
                 </div>

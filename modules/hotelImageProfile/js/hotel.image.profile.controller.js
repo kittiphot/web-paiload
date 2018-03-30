@@ -1,5 +1,7 @@
 angular.module('myApp').controller('hotelImageProfileController', ['$scope', 'hotelImageProfileFactory', '$routeParams', '$window', function ($scope, hotelImageProfileFactory, $routeParams, $window) {
   $scope.hotelImageProfiles = {};
+  $scope.hotelId = (typeof $routeParams.hotelId != 'undefined' ? $routeParams.hotelId : 0);
+  $scope.status = (typeof $routeParams.status != 'undefined' ? $routeParams.status : 0);
   $scope.albumId = (typeof $routeParams.albumId != 'undefined' ? $routeParams.albumId : 0);
   $scope.albumName = (typeof $routeParams.albumName != 'undefined' ? $routeParams.albumName : 0);
   $scope.imageId = (typeof $routeParams.imageId != 'undefined' ? $routeParams.imageId : 0);
@@ -30,9 +32,9 @@ angular.module('myApp').controller('hotelImageProfileController', ['$scope', 'ho
     hotelImageProfileFactory.setHotelImage(params).then(function successCallback(res) {
       console.log(res.data)
     if ($scope.imageId != 0) {
-      $window.location.href = '#!/hotelImage/' + $scope.albumId + '/' + $scope.albumName;
+      $window.location.href = '#!/hotelImage/' + $scope.albumId + '/' + $scope.hotelId + '/' + $scope.status + '/' + $scope.albumName;
     } else {
-      // $window.location.href = '#!/hotel/';
+      $window.location.href = '#!/hotelImage/' + $scope.albumId + '/' + $scope.hotelId + '/' + $scope.status + '/' + $scope.albumName;
     }
     }, function errorCallback(err) {
       console.log(err)
