@@ -1,0 +1,163 @@
+<div ng-include="'modules/menu/views/menu.html'"></div>
+
+<header id="fh5co-header" role="banner">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="" class="fh5co-menu-btn js-fh5co-menu-btn">Menu
+          <i class="icon-menu"></i>
+        </a>
+        <a class="navbar-brand" href=""></a>
+      </div>
+    </div>
+  </div>
+
+</header>
+<!-- END .header -->
+
+<div id="fh5co-main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>Hotel</h2>
+        <div class="fh5co-spacer fh5co-spacer-sm"></div>
+        <form ng-submit="submit()" ng-controller="RestaurantsProfileController" ng-init="getRestaurantsProfile()">
+          <div class="row">
+
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Name</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Name" ng-model="RestaurantProfiles.name" required>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-xs-3 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Image</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="btn btn-info" ngf-select ng-model="RestaurantProfiles.image" name="image" ngf-pattern="'image/*'" ngf-accept="'image/*'"
+                ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 300, height: 300}">
+                Select
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Mobile</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Tel" ng-model="RestaurantProfiles.mobile" required>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Phone</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Hotel&nbsp;Promotion" ng-model="RestaurantProfiles.phone">
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Open&nbsp;Date</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Zone&nbsp;Id" ng-model="RestaurantProfiles.open_date">
+              </div>
+            </div>
+
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Latitude</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Zone&nbsp;Id" ng-model="RestaurantProfiles.latitude">
+              </div>
+            </div>
+
+            <div class="col-md-2 col-xs-1 text-right">
+                <div class="form-group">
+                  <label class="col-form-label">Longtitude</label>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Zone&nbsp;Id" ng-model="RestaurantProfiles.longitude">
+                </div>
+              </div>
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Open&nbsp;Time</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Hotel&nbsp;Site" ng-model="RestaurantProfiles.open_time">
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Close&nbsp;Time</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Price" ng-model="RestaurantProfiles.close_time">
+              </div>
+            </div>
+
+            <div class="col-md-2 col-xs-1 text-right">
+              <div class="form-group">
+                <label class="col-form-label">Detail</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Visitor" ng-model="RestaurantProfiles.detail">
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-1 text-right">
+                <div class="form-group">
+                  <label class="col-form-label">Address</label>
+                </div>
+              </div>
+              <div class="col-md-10">
+                <div class="form-group">
+                  <textarea name="message" id="message" cols="30" class="form-control" rows="5" placeholder="Address" ng-model="RestaurantProfiles.address " required></textarea>
+                </div>
+              </div>
+
+
+            <div class="col-md-12 text-right">
+              <div class="form-group">
+                <input type="hidden" class="form-control" ng-model="image">
+                <button type="submit" class="btn btn-success">Save</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Magnific Popup -->
+<script src="../../../js/jquery.magnific-popup.min.js"></script>

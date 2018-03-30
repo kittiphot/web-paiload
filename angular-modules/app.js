@@ -31,6 +31,9 @@ angular.module('myApp').config(function ($routeProvider) {
     .when('/hotelImageProfile/:albumId/:hotelId/:status/:albumName/:imageId', {
       templateUrl: 'modules/hotelImageProfile/views/hotelImageProfile.html'
     })
+    .when('/restaurantProfile/:status/:id', {
+      templateUrl: 'modules/restaurantProfile/views/restaurantProfile.html'
+    })
     .when('/restaurantImage/:id/:name', {
       templateUrl: 'modules/restaurantImage/views/restaurantImage.html'
     })
