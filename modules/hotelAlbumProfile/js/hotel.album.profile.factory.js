@@ -4,8 +4,7 @@ angular.module('myApp').factory('hotelAlbumProfileFactory', ['$http', function (
   var hotelAlbumProfileFactory = {};
 
   hotelAlbumProfileFactory.getHotelAlbumProfile = function (param) {
-    // return $http.post(api + '/hotelAlbum/' + param);
-    return $http.get(api + '/hotelAlbum/133');
+    return $http.get(api + '/hotelAlbum/' + param);
   }
 
   hotelAlbumProfileFactory.setHotelAlbum = function (params) {

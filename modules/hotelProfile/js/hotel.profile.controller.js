@@ -7,6 +7,7 @@ angular.module('myApp').controller('hotelProfileController', ['$scope', 'hotelPr
     hotelProfileFactory.getHotelProfile($scope.id).then(function successCallback(res) {
       console.log(res.data)
       $scope.hotelProfiles.name = res.data.name;
+      $scope.hotelProfiles.image = res.data.image_url;
       $scope.hotelProfiles.old_image = res.data.image;
       $scope.hotelProfiles.hotel_promotion = res.data.hotel_promotion;
       $scope.hotelProfiles.zone_id = res.data.zone_id;
